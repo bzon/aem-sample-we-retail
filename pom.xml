@@ -132,34 +132,6 @@
                             <outputDirectory>${project.reporting.outputDirectory}/jacoco-it</outputDirectory>
                         </configuration>
                     </execution>
-
-                    <execution>
-                        <id>jacoco-check</id>
-                        <phase>test</phase>
-                        <goals>
-                          <goal>check</goal>
-                        </goals>
-                        <configuration>
-                          <rules>
-                              <rule implementation="org.jacoco.maven.RuleConfiguration">
-                                <element>BUNDLE</element>
-                                <limits>
-                                  <limit implementation="org.jacoco.report.check.Limit">
-                                    <counter>INSTRUCTION</counter>
-                                    <value>COVEREDRATIO</value>
-                                    <minimum>0.50</minimum>
-                                  </limit>
-                                  <limit implementation="org.jacoco.report.check.Limit">
-                                    <counter>CLASS</counter>
-                                    <value>MISSEDCOUNT</value>
-                                    <maximum>0</maximum>
-                                  </limit>
-                                </limits>
-                              </rule>
-                            </rules>
-                        </configuration>
-                    </execution>
-
                 </executions>
             </plugin>
             <!-- Maven Release Plugin -->
@@ -266,6 +238,13 @@
         </plugins>
         <pluginManagement>
             <plugins>
+
+            <!-- ADDED SONARQUBE PLUGIN -->
+            <plugin>
+                <groupId>org.sonarsource.scanner.maven</groupId>
+                <artifactId>sonar-maven-plugin</artifactId>
+                <version>3.3.0.603</version>
+            </plugin>
                 <!-- Maven Clean Plugin -->
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
