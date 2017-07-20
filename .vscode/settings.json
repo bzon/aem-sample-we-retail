@@ -1,3 +1,4 @@
 // Place your settings in this file to overwrite default and user settings.
 {
+    "terminal.integrated.shell.windows": "C:\\Users\rex.andre.d.coronel\\Documents\\Git\bin\bash.exe"
 }
