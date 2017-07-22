@@ -1,4 +1,4 @@
-# Sypnosis  
+# Synopsis  
 
 This serves as a reference to the Continuous Integration build for projects using AEM 6.3.
 
