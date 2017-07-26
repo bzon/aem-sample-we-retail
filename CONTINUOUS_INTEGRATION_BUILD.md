@@ -1,4 +1,4 @@
-# Sypnosis  
+# Synopsis  
 This serves as a reference to the Continuous Integration build for projects using AEM 6.3.
 ### Maven Plugins Required
 1. This project runs on [Maven v3.5.0](https://maven.apache.org). Ensure that all necessary plugins and their corresponding properties and configurations are set.
