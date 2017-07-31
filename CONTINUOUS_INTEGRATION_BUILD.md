@@ -258,11 +258,21 @@ This command will run and publish the static code analysis result along with the
 ```bash
 mvn sonar:sonar -Dsonar.host.url=http://sonar.example.com -Dsonar.login=aGlhZHNkYTEyM2wxMmszO2wxMjszazE7bDIzazFsMjszMTJzZAo
 ```
+
 SonarQube preview mode should be executed for feature branches and forks.  
 ```bash
 mvn sonar:sonar -Dsonar.host.url=http://sonar.example.com -Dsonar.login=aGlhZHNkYTEyM2wxMmszO2wxMjszazE7bDIzazFsMjszMTJzZAo -Dsonar.analysis.mode=preview -Dsonar.report.export.path=report.json
 ```
 A json report file will be generated as `target/sonar/report.json`.  
+
+SonarQube preview mode using Sonar Gitlab Plugin to automatically post Sonar Issues detected on the commit to Gitlab Merge Request. 
+
+```bash
+mvn --batch-mode sonar:sonar -Dsonar.host.url=http://sonar.example.com -Dsonar.login=aGlhZHNkYTEyM2wxMmszO2wxMjszazE7bDIzazFsMjszMTJzZAo -Dsonar.analysis.mode=preview -Dsonar.gitlab.ref_name=feature/test -Dsonar.gitlab.project_id=1 -Dsonar.gitlab.commit_sha=692047c0
+```
+
+For more info about the awesome [Sonar Gitlab Plugin](https://github.com/gabrie-allaigre/sonar-gitlab-plugin) works.  
+
 ### Deploying Snapshots to Nexus
 Only applicable if version is in SNAPSHOT format. E.g: `0.1.1-SNAPSHOT` or `0.1-SNAPSHOT`.  
 ```bash
